@@ -1,0 +1,1 @@
+export { default as ContentMedpt} from './pages/MedptMain';
