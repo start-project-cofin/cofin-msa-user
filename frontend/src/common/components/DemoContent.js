@@ -9,4 +9,4 @@ function DemoContent() {
   );
 }
 
-export default memo(DemoContent);
+export default DemoContent;
