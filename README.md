@@ -7,14 +7,17 @@
 ## 개발 기간
 #### 2021. 11. 1 ~ 2021. 12.?? (??주)
 
-+ 1주차 : 
-+ 2주차 :
++ 1주차 : base outline components created
++ 2주차 : importing in csv datasets to create dataform models
 + 3주차 :
 + 4주차 :
 + 5주차 :
 
 
 ## Front 또는 backend 기술 스택
+JS
+npm
+yarn
 
 
 ## 팀 소개

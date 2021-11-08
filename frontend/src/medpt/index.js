@@ -1,1 +1,1 @@
-export { default as ContentMedpt} from './pages/MedptMain';
+export { default as MedptMod} from './components/MedptMod'
