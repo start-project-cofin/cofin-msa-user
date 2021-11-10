@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 // import {createStore} from 'redux/store';
 
 // const ADD_DISASTER_MSG_DATA = "addDMD";
@@ -10,3 +10,15 @@
 // const setMSQ = () => {
 //     return{type:SET_MSG_SEARCHQUERY, searchQuery: query}
 // };
+export default function MessageAdd(){
+
+    <>
+    <div>
+        <fieldset>
+            <form>
+                <legend>news body here</legend>
+            </form>
+        </fieldset>
+    </div>
+    </>
+}

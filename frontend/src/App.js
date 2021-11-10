@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 import styled from 'styled-components'
 import { Router, Route, Redirect, Switch, BrowserRouter } from 'react-router-dom'
 import { ContentMsg } from './message';
-import { MedptMod } from './medpt';
+import { MedptMod, MedptMain } from './medpt';
 import { News } from './news';
 import { UserMain } from './user';
 
@@ -23,7 +23,7 @@ const App=()=> {
 <Route exact path='/checkup' component = { CheckUp }/>
 <Route exact path='/vaccineresult' component = { VaccineResult }/> */}
 
-<Route exact path='/medpts' component= { MedptMod }/>
+{/* <Route exact path='/medpts' component= { MedptMain }/> */}
 <Route exact path='/messagelist' component= { ContentMsg }/>
 <Route exact path='/newslist' component= { News }/>
 <Route exact path='/userpage' component= { UserMain }/>

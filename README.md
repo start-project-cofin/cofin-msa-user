@@ -8,7 +8,8 @@
 #### 2021. 11. 1 ~ 2021. 12.?? (??주)
 
 + 1주차 : base outline components created
-+ 2주차 : importing in csv datasets to create dataform models
++ 2주차 : (1108)importing in csv datasets to create dataform models; 
+            (1110)rehashed app for new version, @mui tables mainly;
 + 3주차 :
 + 4주차 :
 + 5주차 :
@@ -18,6 +19,7 @@
 JS
 npm
 yarn
+@mui
 
 
 ## 팀 소개
