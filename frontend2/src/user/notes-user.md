@@ -19,4 +19,5 @@ https://github.com/minimal-ui-kit/material-kit-react
 다시 고치기;; 
 
 ###프런트씨 주의! 
-package.json dependencies + devdependencies 둘다 봐주세요 추가 많아요!
+package.json dependencies + devdependencies 
+
