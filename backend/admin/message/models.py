@@ -1,6 +1,7 @@
 # Python 샘플 코드 #
 # encokey: Rog5S57JKcIX%2FK02W09COr4YirNy8fdW6sttZQk3KF0VZqjBVcyENX%2B4Oni0WrIcjWyMP8%2BpdkOG1KBd9Raotw%3D%3D
 # decokey: Rog5S57JKcIX/K02W09COr4YirNy8fdW6sttZQk3KF0VZqjBVcyENX+4Oni0WrIcjWyMP8+pdkOG1KBd9Raotw==
+from datetime import datetime
 
 import requests
 import os
@@ -44,4 +45,4 @@ for i in range(len(pageNO)):
     for item in soup.findAll("row"):
         df.loc[k] = [item.create_date.text, item.location_name.text, item.msg.text]
         k = k + 1
-df.to_csv('./행정안전부_재난문자방송 발령현황(지역별).csv', encoding='utf-8-sig')
+df.to_csv('./행정안전부_재난문자방송 발령현황(지역별)-{datetime}.csv', encoding='utf-8-sig')

@@ -5,10 +5,10 @@ import { Card, Stack, Link, Container, Typography } from '@mui/material';
 // layouts
 import AuthLayout from '../layouts/AuthLayout';
 // components
-import Page from '../components/Page';
-import { MHidden } from '../components/@material-extend';
-import { LoginForm } from '../components/authentication/login';
-import AuthSocial from '../components/authentication/AuthSocial';
+import Page from '../maybe/Page';
+import { MHidden } from '../maybe/@material-extend';
+import { LoginForm } from '../maybe/authentication/login';
+import AuthSocial from '../maybe/authentication/AuthSocial';
 
 // ----------------------------------------------------------------------
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import MsgTable from './MsgTable'
+import MsgTable from '../components/MsgTable'
 
 export default function MedptPage(){
     return(

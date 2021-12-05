@@ -7,8 +7,9 @@ import { Route, Redirect, Switch, BrowserRouter } from 'react-router-dom'
 
 
 import MedptPage from "./medpt/MedptPage";
-import MsgPage from "./message/MsgPage"
-import NewsPage from "./news/NewsPage"
+import MsgPage from "./message/pages/MsgPage"
+// import NewsPage from "./news/NewsPage"
+import NewsPage from "./news/pages/NewsPage"
 import LoginPage from "./user/1-login/LoginPage"
 
 function App() {
