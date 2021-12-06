@@ -1,6 +1,6 @@
-export {default as LoginPage} from './1-login/LoginPage'
-export {default as UserLogin} from './1-login/UserLogin'
-export {default as UserLost} from './1-login/UserLost'
+export {default as LoginPage} from './1-login/page/LoginPage'
+export {default as UserLogin} from './1-login/components/UserLogin'
+export {default as UserLost} from './1-login/components/UserLost'
 
 export {default as UserJoin} from './2-join/UserJoin'
 

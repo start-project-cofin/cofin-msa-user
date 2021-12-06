@@ -44,18 +44,22 @@ for i in range(len(pageNO)):
     soup = BeautifulSoup(data, "html.parser")
 
     for item in soup.findAll("row"):
-        df.loc[k] = [item.create_date.text, item.location_id.text, item.location_name.text, item.md101_sn, item.msg.text]
+        df.loc[k] = [item.create_date.text, item.location_id.text, item.location_name.text, item.md101_sn.text, item.msg.text]
         k = k + 1
 df.to_csv('./data/재난문자.csv', encoding='utf-8-sig')
 
-# f = open('./data/재난문자.csv', 'r')
+# f = open('./data/재난문자.csv', 'r', encoding='utf-8-sig')
+# f = pd.read_csv('./data/재난문자.csv', 'r', encoding='utf-8-sig')
 # list_ = []
 # count = 0
+# # with open('./data/재난문자.csv', 'r', encoding='utf-8-sig') as f:
 # for line in csv.reader(f):
-#     a = line[3].split(' ',1) # 지역명 분리
+#     # a = line[3].replace(' ','',1) # 지역명 분리
+#     # a = a.split('',1)
 #     b = line[5].replace('[','',1)  # 문자내용 중 담당구청 이름 분리
 #     b = b.split(']',1)
-#     list_.append([line[0],line[1],line[2],a[0],a[-1],b[0],b[-1]])
+#     # list_.append([line[0],line[1],line[2],a[0],a[-1],b[0],b[-1]])
+#     list_.append([line[0],line[1],line[2],b[0],b[-1]])
 #
 # ft = open('./data/재난문자_split.csv', 'w', newline='')
 # wr = csv.writer(ft)

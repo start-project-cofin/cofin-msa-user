@@ -30,7 +30,7 @@ const StyledTableRow = withStyles(theme=>({
 // function createData(id, col1, col2, col3, col4, col5){
 //     return{id, col1, col2, col3, col4, col5};
 // }
-// csv: 연,월,일,시,분,수신지역, 내용
+// csv: 연,월,일,시,분,수신지역, 내용  NOPE
 // ERD: ++id, XX message_type(5), ++message_date, ++message_time(24H), message_city, message_district, 
     //+msg_tags? +description? +msg! +landmark?
 

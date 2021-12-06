@@ -11,7 +11,8 @@ import MedptPage from "./medpt/pages/MedptPage";
 import MsgPage from "./message/pages/MsgPage"
 // import NewsPage from "./news/NewsPage"
 import NewsPage from "./news/pages/NewsPage"
-import LoginPage from "./user/1-login/LoginPage"
+import LoginPage from "./user/1-login/page/LoginPage"
+import { UserLost } from 'user';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
     <Route exact path='/message' component={MsgPage}/>
     <Route exact path='/news' component={NewsPage}/>
     <Route exact path='/user' component={LoginPage}/>
+    <Route exact path='/lost' component={UserLost}/>
     </Switch>
     {/* </Routes> */}
   </BrowserRouter>
