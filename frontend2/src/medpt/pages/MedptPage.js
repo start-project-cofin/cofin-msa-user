@@ -1,5 +1,5 @@
 import React from 'react'
-import MedptTable from './MedptTable'
+import MedptTable from '../components/MedptTable'
 
 export default function MedptPage(){
     return(

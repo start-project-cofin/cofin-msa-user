@@ -1,3 +1,4 @@
-from django.test import TestCase
-
-# Create your tests here.
+import urllib.request
+import pandas as pd
+from konlpy.tag import Mecab
+from nltk import FreqDist

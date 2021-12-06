@@ -32,10 +32,10 @@ const StyledTableRow = withStyles(theme=>({
 // }
 // csv: 연,월,일,시,분,수신지역, 내용
 // ERD: ++id, XX message_type(5), ++message_date, ++message_time(24H), message_city, message_district, 
-    //+msg_tags? +description? +summary! +landmark?
+    //+msg_tags? +description? +msg! +landmark?
 
-function createData(id,date,time,city,district,summary){
-    return{id,date,time,city,district,summary};
+function createData(id,date,time,city,district,msg){
+    return{id,date,time,city,district,msg};
 }
 
 const rows = [
@@ -66,7 +66,7 @@ export default function MedptTable(){
                         <StyledTableCell>time/ <code>message_time</code></StyledTableCell>
                         <StyledTableCell>city/ <code>message_city</code></StyledTableCell>
                         <StyledTableCell>district/ <code>message_district</code></StyledTableCell>
-                        <StyledTableCell>summary/ <code>message_summary</code></StyledTableCell>
+                        <StyledTableCell>msg/ <code>message_</code></StyledTableCell>
                         {/* <StyledTableCell>tag/ <code>message_tag</code></StyledTableCell> */}
                     </TableRow>
                 </TableHead>
@@ -78,7 +78,7 @@ export default function MedptTable(){
                             <StyledTableCell align="center">{row.time}</StyledTableCell>
                             <StyledTableCell align="center">{row.city}</StyledTableCell>
                             <StyledTableCell align="center">{row.district}</StyledTableCell>
-                            <StyledTableCell align="center">{row.summary}</StyledTableCell> 
+                            <StyledTableCell align="center">{row.msg}</StyledTableCell> 
                             {/* <StyledTableCell>tag/ <code>message_tag</code></StyledTableCell> */}
                         </StyledTableRow>
                     ))}
