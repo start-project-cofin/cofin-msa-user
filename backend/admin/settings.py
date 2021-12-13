@@ -85,6 +85,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': 'admin',
+        'PASSWORD' : 'mariadb0',
+        'HOST' : 'cofin-mariadb.cyhqsmo1vvdt.ap-northeast-2.rds.amazonaws.com',
+        'PORT' : '3306',
     }
 }
 

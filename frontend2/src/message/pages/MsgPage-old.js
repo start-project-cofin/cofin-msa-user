@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MessageBody from 'message/components/MessageBody';
+// import MessageBody from 'message/old/MessageBody';
 import MessageDate from 'message/components/MessageDate';
 import MessageSearch from 'message/components/MessageSearch';
 import MessageTags from 'message/components/MessageTags'
@@ -17,7 +17,7 @@ const MessagePage = () => {
                     <tr><MessageDate /></tr>
                     <tr><MessageTags /></tr>
                 </td>
-                <td><MessageBody/></td>
+                <td>HARHARHARH</td>
             </tr>
             
         </table>

@@ -1,3 +1,4 @@
+import MessagePage from 'message/pages/MsgPage-old';
 import React from 'react'
 import SearchBox from './SearchBox';
 // import Test from '../user/Test'
@@ -16,6 +17,7 @@ export default function Navigation(){
                 <li><br /><br /></li>
                 {/* <li><Test/></li> */}
                 {/* <li><Login/></li> */}
+                <li><MessagePage/></li>
             </ul>
         </div>
     );

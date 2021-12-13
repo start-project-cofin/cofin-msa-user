@@ -5,27 +5,13 @@ import {
     TableBody,
     TableCell,
     TableContainer,
+    TableFooter,
     TableHead,
+    TablePagination,
     TableRow,
-    Paper,
+    Paper
   } from "@material-ui/core";
-
-  const StyledTableCell = withStyles(theme => ({
-    head:{
-        backgroundColor: 'darkgrey', 
-        color: 'white',
-    },
-    body:{
-        fontSize: 14,
-    },
-
-}))(TableCell);
-
-const StyledTableRow = withStyles(theme=>({
-    row: {
-        '&:hover':{backgroundColor: 'rgba(33,150,243,0.5'}
-    }
-}))(TableRow);
+// import "" from "backend/admin/message/data"
 
 // function createData(id, col1, col2, col3, col4, col5){
 //     return{id, col1, col2, col3, col4, col5};
@@ -88,3 +74,19 @@ export default function MedptTable(){
     );
 }
 
+const StyledTableCell = withStyles(theme => ({
+    head:{
+        backgroundColor: 'darkgrey', 
+        color: 'white',
+    },
+    body:{
+        fontSize: 14,
+    },
+
+}))(TableCell);
+
+const StyledTableRow = withStyles(theme=>({
+    row: {
+        '&:hover':{backgroundColor: 'rgba(33,150,243,0.5'}
+    }
+}))(TableRow);
