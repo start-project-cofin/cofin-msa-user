@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'admin.medpoint',
     'admin.message',
     'admin.news',
+    'rest_framework',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
