@@ -6,6 +6,7 @@
 # http://apis.data.go.kr/6410000/GOA/GOA001?ServiceKey=서비스키&type=json&numOfRows=10&pageNo=1
 # http://apis.data.go.kr/1741000/DisasterMsg4/getDisasterMsg2List?ServiceKey=Rog5S57JKcIX%2FK02W09COr4YirNy8fdW6sttZQk3KF0VZqjBVcyENX%2B4Oni0WrIcjWyMP8%2BpdkOG1KBd9Raotw%3D%3D&type=xml&pageNo=1&numOfRows=50&flag=Y
 
+from django.db import models
 import csv
 import requests
 import os
@@ -13,6 +14,22 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import pandas as pd
 from time import sleep
+
+
+class Message(models.Model):
+    use_in_migration = True
+    msg_id = models.AutoField()
+    msg_type = models.BooleanField()  # considering deletion bc may categorize during xml scraping; COVID related = Y(1), else = N(0)
+    msg_city = models.TextField()
+    msg_district = models.TextField()
+    msg_date = models.DateField()
+    msg_time = models.TimeField()
+
+    class Meta:
+        db_table = 'message'
+
+    def __str__(self):
+        return f'[{self.pk}]'
 
 
 def scrape_msg():

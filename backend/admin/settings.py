@@ -84,11 +84,12 @@ WSGI_APPLICATION = 'admin.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'USER': 'admin',
-        'PASSWORD' : 'mariadb0',
-        'HOST' : 'cofin-mariadb.cyhqsmo1vvdt.ap-northeast-2.rds.amazonaws.com',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cofin',
+        'USER': 'root',
+        'PASSWORD' : 'root',
+        # 'HOST' : 'cofin-mariadb.cyhqsmo1vvdt.ap-northeast-2.rds.amazonaws.com',
+        'HOST' : '127.0.0.1',
         'PORT' : '3306',
     }
 }

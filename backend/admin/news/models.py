@@ -1,6 +1,23 @@
+from django.db import models
 import requests
 from bs4 import BeautifulSoup
 
+class News(models.Model):
+    use_in_migration = True
+    news_id = models.AutoField()
+    news_title = models.TextField()
+    news_pub_date = models.DateTimeField()
+    news_link = models.CharField()
+    # news_tag = models.CharField()
+    # news_publisher = models.CharField()
+    # no more news_type, news_tag as scraping is based on keyword search
+    # no more news_publisher as it is irrelevant based on search condition
+
+    class Meta:
+        db_table = 'news'
+
+    def __str__(self):
+        return f'[{self.pk}]'
 
 def create_soup(url):
     headers = {

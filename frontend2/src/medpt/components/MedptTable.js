@@ -31,7 +31,7 @@ const StyledTableRow = withStyles(theme=>({
 //     return{id, col1, col2, col3, col4, col5};
 // }
 function createData(id,city,district,medptName,address,phMedpt,opHrWeek,opHrSat,
-    opHrSunEtc,bogunso,phBogunso,notes){
+    opHrHol,bogunso,phBogunso,notes){
     return{id,city,district,medptName,address,phMedpt,opHrWeek,opHrSat,
         opHrSunEtc,bogunso,phBogunso,notes};
 }
@@ -95,7 +95,7 @@ export default function MedptTable(){
                             <StyledTableCell align="center">{row.phMedpt}</StyledTableCell>
                             <StyledTableCell align="center">{row.opHrWeek}</StyledTableCell>
                             <StyledTableCell align="center">{row.opHrSat}</StyledTableCell>
-                            <StyledTableCell align="center">{row.opHrSunEtc}</StyledTableCell>
+                            <StyledTableCell align="center">{row.opHrHol}</StyledTableCell>
                             <StyledTableCell align="center">{row.bogunso}</StyledTableCell>
                             <StyledTableCell align="center">{row.phBogunso}</StyledTableCell>
                             <StyledTableCell align="center">{row.notes}</StyledTableCell>
