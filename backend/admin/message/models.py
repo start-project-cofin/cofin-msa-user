@@ -18,7 +18,7 @@ from time import sleep
 
 class Message(models.Model):
     use_in_migration = True
-    msg_id = models.AutoField()
+    msg_id = models.AutoField(primary_key=True)
     msg_type = models.BooleanField()  # considering deletion bc may categorize during xml scraping; COVID related = Y(1), else = N(0)
     msg_city = models.TextField()
     msg_district = models.TextField()
