@@ -1,13 +1,9 @@
 from django.db import models
 
 
-class Vaccine_Info(models.Model):
-    use_in_migrations = True
-
-
 class User_Vaccine(models.Model):
     use_in_migrations = True
-    vaccine_type = models.TextField(primary_key=True)
+    vaccine_type = models.TextField(primary_key=True, max_length=30)
     innoculation_date = models.DateField()
     vaccine_side_effect = models.TextField()
     undercond_id = models.IntegerField()  # usage?
