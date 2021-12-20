@@ -19,14 +19,14 @@ class DbUploader:
         with open(self.csvfile, newline='', encoding='utf8') as f:
             data_reader = csv.DictReader(f)
             for row in data_reader:
-                if not User.objects.filter(user_email=row['user_email']).exists():
-                    user = User.objects.create(user_email=row['user_email'],
-                                               password=row['password'],
+                if not User.objects.filter(username=row['username']).exists():
+                    user = User.objects.create(password=row['password'],
                                                user_name=row['user_name'],
-                                               phone=row['phone'],
-                                               age=row['age'],
-                                               address=row['address'],
-                                               job=row['job'],
-                                               user_interests=row['user_interests'],
-                                               login_type=row['login_type'], )
+                                               user_birthday=row['user_birthday'],
+                                               user_sex=row['user_sex'],
+                                               user_phone=row['user_phone'],
+                                               user_email=row['user_email'],
+                                               user_address=row['user_address'],
+                                               user_vaccinated=row['user_vaccinated'],
+                                               vaccine_type=row['vaccine_type'],)
                 print('USER DATA UPLOADED SUCCESSFULY!')
