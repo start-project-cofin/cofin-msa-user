@@ -1,6 +1,6 @@
-from django.conf.urls import url
-from admin.news import views
+from django.urls import path
+from admin.news import models
 
 urlpatterns = {
-    # url(r'', views.connection)
+    path(r'news', models.News)
 }

@@ -2,7 +2,8 @@ import csv
 from admin.common.models import ValueObject, Printer, Reader
 from admin.user.models import User
 
-class DbUploader:
+
+class UserDB:
     def __init__(self):
         vo = ValueObject()
         reader = Reader()
@@ -19,14 +20,14 @@ class DbUploader:
         with open(self.csvfile, newline='', encoding='utf8') as f:
             data_reader = csv.DictReader(f)
             for row in data_reader:
-                if not User.objects.filter(username=row['username']).exists():
-                    user = User.objects.create(password=row['password'],
+                if not User.objects.filter(user_email=row['user_email']).exists():
+                    user = User.objects.create(username=row['username'],
+                                                password=row['password'],
                                                user_name=row['user_name'],
                                                user_birthday=row['user_birthday'],
                                                user_sex=row['user_sex'],
                                                user_phone=row['user_phone'],
-                                               user_email=row['user_email'],
                                                user_address=row['user_address'],
                                                user_vaccinated=row['user_vaccinated'],
-                                               vaccine_type=row['vaccine_type'],)
-                print('USER DATA UPLOADED SUCCESSFULY!')
+                                               vaccine_type=row['vaccine_type'], )
+                print('USER DATA UPLOAD SUCCESS.')

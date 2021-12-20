@@ -1,6 +1,6 @@
-from django.conf.urls import url
+from django.urls import path
 from admin.message import views
 
 urlpatterns = {
-    # url(r'', views.connection)
+    path(r'message', views.message)
 }

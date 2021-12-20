@@ -17,4 +17,4 @@ class News(models.Model):
         db_table = 'news'
 
     def __str__(self):
-        return f'[{self.pk}]'
+        return f'{self.pk}'
