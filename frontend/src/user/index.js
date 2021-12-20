@@ -1,7 +1,0 @@
-export { default as ContentUser } from './components/Login'
-export { default as AppAlert } from './components/AppAlert'
-export { default as Register } from './components/RegisterForm'
-export { default as Unregister } from './components/Unregister'
-export { default as UserInfo } from './components/UserInfo'
-export { default as UserLost } from './components/UserLost'
-export { default as UserMain } from './pages/UserMain'
