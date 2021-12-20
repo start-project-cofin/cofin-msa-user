@@ -1,1 +1,0 @@
-export { default as MedptMod} from './components/MedptMod'
