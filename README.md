@@ -5,22 +5,18 @@
 팀명이자 프로젝트명 코핀은 'Corona Finish'의 약자로 1년이 넘어가는 코로나 사태를 하루라도 빨리 끝내기를 바라는 기원과 포부를 담아 지었습니다. 코로나 바이러스와 백신에 대한 정보, 국내와 해외의 확진자 추세, 감염 확정시 확진자를 위한 행동 가이드 등을 제공합니다.
 
 ## 개발 기간
-#### 2021. 11. 1 ~ 2021. 12.?? (??주)
+#### 2021. 11. 1 ~ 2021. 12.24 (8주)
 
-+ 1주차 : base outline components created
-+ 2주차 : (1108)importing in csv datasets to create dataform models; 
-            (1110)rehashed app for new version, @mui tables mainly;
-+ 3주차 :
-+ 4주차 :
-+ 5주차 :
++ 1주차 : created base repository
++ 2주차 : Message <xml> scraping
++ 3주차 : created frontend components
++ 7주차 : mariadb setup; Medpoint csv file scraping, News <keyword> crawling,
++ 8주차 : sync between frontend user components and backend user app
 
 
 ## Front 또는 backend 기술 스택
-JS
-npm
-yarn
-@mui
-
+Front: React/ @mui
+Back: npm/ yarn/ MariaDB/ Docker
 
 ## 팀 소개
 | part   | name |
