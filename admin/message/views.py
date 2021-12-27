@@ -31,3 +31,4 @@ def message(request):
 
     except:
         return JsonResponse({'message': 'WHat??'})
+

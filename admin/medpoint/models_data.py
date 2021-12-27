@@ -1,12 +1,19 @@
-import requests
-import os
 import csv
-import sys
-from admin.common.models import ValueObject, Reader, Printer
-import pandas as pd
-import json
 import icecream as ic
+import pandas as pd
+
+from admin.common.models import ValueObject, Reader, Printer
 from admin.medpoint.models import Medpoint
+
+
+def xls_to_csv():
+    test_file = pd.read_excel('./data/선별진료소_20211227124619.xls')
+    print(test_file)
+    print(test_file.shape)
+    test_file.to_csv("./data/선별진료소_20211227124619.csv")
+
+    change_headers = pd.read_csv('./data/선별진료소_20211227124619.csv')
+    change_headers.to_csv('./data/medpt20211227.csv')
 
 
 class DataUpload:
@@ -15,7 +22,7 @@ class DataUpload:
         reader = Reader()
         self.printer = Printer()
         vo.context = './data/'
-        vo.fname = 'medpt20211220.csv'
+        vo.fname = 'medpt20211227.csv'
         self.csvfile = reader.new_file(vo)
 
     def update_medpt(self):
@@ -26,9 +33,7 @@ class DataUpload:
                 m = Medpoint()
                 medpt = Medpoint.objects.all().values()[0]
 
-# 국민재난안전포털 - 코로나19 선별진료소 : https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/emd/covid19ClnicCenter.html?menuSeq=822
-# def medpoint_location():
-#     url=""
-#     res = requests.get(url)
-#     soup = BeautifulSoup(res.content, 'html.parser')
-#     locas = soup.find_all('')
+
+if __name__ == '__main__':
+    # xls_to_csv()
+    DataUpload
