@@ -10,7 +10,7 @@ class News(models.Model):
 
     # news_tag = models.CharField()
     # news_publisher = models.CharField()
-    # no more news_type, news_tag as scraping is based on keyword search
+    # no more news_type, news_  tag as scraping is based on keyword search
     # no more news_publisher as it is irrelevant based on search condition
 
     class Meta:

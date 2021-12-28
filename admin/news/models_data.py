@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import time
 
 
 print("F5 = 최신 뉴스 크롤링")
@@ -22,6 +23,7 @@ for article in articles:
         # print(pub_name)
     # print(link.title,pub.pub_name,link.url)
     print(title,url,pub_date)
+    time.sleep(300)
     # links = soup.select(".news_tit")  # class: news_tit
     # pubs = soup.select(".info_group")  # class: info_group
     # for link in links:

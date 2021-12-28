@@ -1,11 +1,11 @@
 # link template
 # http://apis.data.go.kr/6410000/GOA/GOA001?ServiceKey=서비스키&type=json&numOfRows=10&pageNo=1
 import time
-
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 import mysql.connector
+
 
 def scraping():
     total_time = 0
@@ -35,7 +35,7 @@ def scraping():
         msg_id = msg.find("md101_sn").get_text()  # 일련번호가 필요할까?
         msg_content = msg.find("msg").get_text()
         # send_platform = rows.find("send_platform").get_text() # irrelevant
-    # print(msg_date, msg_time, location_id, location_name, msg_id, msg_content)
+        # print(msg_date, msg_time, location_id, location_name, msg_id, msg_content)
         print("발신 시간: ", msg_date, msg_time, " | 수신지역: ", location_id, location_name, " | 문자내용: ", msg_content)
 
     end = time.time()
@@ -44,23 +44,24 @@ def scraping():
     print("로딩타임 : ", total_time)
 
 
-# no saving, 그냥 present
-
-def msg_table():
-    messageDB = mysql.connector.connect(
-        host="127.0.0.1",
-        database="cofin",
-        user="root",
-        password="root",
-        # table="message"
-    )
-    cur = messageDB.cursor()
-    cur.execute("select * from message where idx in ()")
-    result = cur.fetchall()
-    for x in result:
-        print(x)
-
-    sql = "INSERT INTO table (msg_date, msg_time,location_id,location_name,msg_content) values (%s,%s,%s,%s,%s)"
+#
+# # no saving, 그냥 present
+#
+# def msg_table():
+#     messageDB = mysql.connector.connect(
+#         host="127.0.0.1",
+#         database="cofin",
+#         user="root",
+#         password="root",
+#         # table="message"
+#     )
+#     cur = messageDB.cursor()
+#     cur.execute("select * from message where idx in ()")
+#     result = cur.fetchall()
+#     for x in result:
+#         print(x)
+#
+#     sql = "INSERT INTO table (msg_date, msg_time,location_id,location_name,msg_content) values (%s,%s,%s,%s,%s)"
 
 
 if __name__ == '__main__':
