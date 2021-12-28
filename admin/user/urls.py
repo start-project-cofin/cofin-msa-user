@@ -1,10 +1,11 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
+
 from admin.user import views
 
-urlpatterns = {
-    path(r'join', views.users),
+urlpatterns = [
+    path(r'join', views.join),
     path(r'login', views.login),
-    path(r'logout', views.logoutButton),
-    # path(r'find', views.find),
-    # path(r'check', views.check),
-}
+    path(r'modify', views.modify),
+    path(r'unregister', views.unregister),
+]

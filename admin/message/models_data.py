@@ -32,7 +32,7 @@ def scraping():
         # split create_date into date AND time
         location_id = msg.find("location_id").get_text()
         location_name = msg.find("location_name").get_text()
-        msg_id = msg.find("md101_sn").get_text()  # 일련번호가 필요할까?
+        # msg_id = msg.find("md101_sn").get_text()  # 일련번호가 필요할까?
         msg_content = msg.find("msg").get_text()
         # send_platform = rows.find("send_platform").get_text() # irrelevant
         # print(msg_date, msg_time, location_id, location_name, msg_id, msg_content)

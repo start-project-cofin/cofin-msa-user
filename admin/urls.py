@@ -14,9 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.contrib.admin import site
-from django.template.defaulttags import url
 from django.urls import path, include
+from admin.common.views import Connection
 
 from admin import user, medpoint, message, news
 from admin.user import urls
@@ -25,10 +24,9 @@ from admin.news import urls
 from admin.message import urls
 
 urlpatterns = [
-    path('connect/', admin.site.urls),
-    path('user/', include(user.urls)),
-    path('medpoint/', include(medpoint.urls)),
-    path('message/', include(message.urls)),
-    path('news/', include(news.urls)),
-# path('clients/', include('app_name.urls'))
+    path('api/connect', Connection.as_view()),
+    path('api/user', include(user.urls)),
+    path('api/medpoint', include(medpoint.urls)),
+    path('api/message', include(message.urls)),
+    path('api/news', include(news.urls)),
 ]

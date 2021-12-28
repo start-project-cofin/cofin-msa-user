@@ -1,13 +1,13 @@
 # from django.http import JsonResponse
 # from django.shortcuts import render
-#
+# from rest_framework.response import Response
+# from rest_framework.views import APIView
 # # Create your views here.
 # from rest_framework import status
 # from rest_framework.decorators import api_view, parser_classes
 # from rest_framework.parsers import JSONParser
 #
 # from admin.news.models import News
-# from admin.news.serializer import NewsSerializer
 #
 #
 # @api_view(['GET', 'POST'])
@@ -23,7 +23,7 @@
 #             print('this is the POST method from news.VIEWS')
 #             new_news = request.data['body']
 #             print(new_news)
-#             serializer = MsgSerializer(data=new_msg['message'])
+#             serializer = NewsSerializer(data=new_msg['message'])
 #             if serializer.is_valid():
 #                 serializer.save()
 #                 return JsonResponse({'update': 'SUCCESS'})
@@ -31,3 +31,10 @@
 #
 #     except:
 #         return JsonResponse({'message': 'WHat??'})
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+
+class News(APIView):
+    def get(self, request):
+        return Response({'News': 'SUCCESS'})

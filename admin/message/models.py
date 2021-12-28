@@ -9,7 +9,7 @@ class Message(models.Model):
     # msg_type = models.BooleanField()  # considering deletion bc may categorize during xml scraping; COVID related = Y(1), else = N(0)
     location_id = models.TextField()
     location_name = models.TextField()
-    msg_content = models.CharField(max_length=65535)
+    msg_content = models.TextField()
 
     class Meta:
         db_table = 'message'
