@@ -28,16 +28,18 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    'admin.user',
+    'admin.common',
     'admin.medpoint',
     'admin.message',
     'admin.news',
+    'admin.user',
     'rest_framework',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
