@@ -33,6 +33,7 @@ def xls_to_csv():
 
 # docker cp ~/<csv-file-name>.csv <container-id>:/
 # docker cp C:\Users\USER\Documents\GitHub\cofin-msa-user\backend\admin\medpoint\data\medptlist.csv 9fed450e5e25:/
+# MariaDB [cofin]> LOAD DATA LOCAL INFILE '/medptlist.csv' INTO TABLE medpoint FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 
 if __name__ == '__main__':
     xls_to_csv()
