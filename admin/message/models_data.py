@@ -1,5 +1,6 @@
 # link template
 # http://apis.data.go.kr/6410000/GOA/GOA001?ServiceKey=서비스키&type=json&numOfRows=10&pageNo=1
+import csv
 import time
 import pandas as pd
 import requests
@@ -24,8 +25,10 @@ def scraping():
     # print(response.text)
     soup = BeautifulSoup(response, "lxml")
     msgs = soup.select("row")
+    msg_list=[]
     print("adding to soup")
     for msg in msgs:
+        temp=[]
         msg_date = msg.find("create_date").get_text().split()[0]
         msg_time = msg.find("create_date").get_text().split()[-1]
         # print("date: ",msg_date, "time: ",msg_time)
@@ -37,6 +40,20 @@ def scraping():
         # send_platform = rows.find("send_platform").get_text() # irrelevant
         # print(msg_date, msg_time, location_id, location_name, msg_id, msg_content)
         print("발신 시간: ", msg_date, msg_time, " | 수신지역: ", location_id, location_name, " | 문자내용: ", msg_content)
+        temp.append(msg_date)
+        temp.append(msg_time)
+        temp.append(location_id)
+        temp.append(location_name)
+        temp.append(msg_content)
+        msg_list.append(temp)
+        print('msg_list info added')
+
+    with open('./data/msg_scraping.csv','w',newline='') as f:
+        writer = csv.writer(f)
+        # writer.writerow(['index','msg_date','msg_time','location_id','location_name','msg_content'])
+        for i in msg_list:
+            writer.writerow(i)
+        f.close()
 
     end = time.time()
     total_time += end - start

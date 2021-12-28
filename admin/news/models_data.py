@@ -1,3 +1,5 @@
+import csv
+
 import requests
 from bs4 import BeautifulSoup
 import time
@@ -10,7 +12,9 @@ url = f"https://m.search.naver.com/search.naver?where=m_news&sm=mtb_jum&query={s
 response = requests.get(url).text
 soup = BeautifulSoup(response, 'html.parser')
 articles = soup.select(".news_wrap")
+article_list=[]
 for article in articles:
+    temp=[]
     links = article.select(".news_tit")  # class: news_tit
     for link in links:
         title = link.text
@@ -23,13 +27,14 @@ for article in articles:
         # print(pub_name)
     # print(link.title,pub.pub_name,link.url)
     print(title,url,pub_date)
-    time.sleep(300)
-    # links = soup.select(".news_tit")  # class: news_tit
-    # pubs = soup.select(".info_group")  # class: info_group
-    # for link in links:
-    #     title = link.text
-    #     url = link.attrs['href']
-    #     print(title, url)    #
-    # for pub in pubs:
-    #     pub_name = pub.text
-    #     print(pub_name)
+    temp.append(title)
+    temp.append(url)
+    temp.append(pub_date)
+    article_list.append(temp)
+    print('article_list info added')
+
+    with open('./data/news_scraping.csv','w',newline='') as f:
+        writer = csv.writer(f)
+        for i in article_list:
+            writer.writerow(i)
+        f.close()
