@@ -1,5 +1,4 @@
 import csv
-import icecream as ic
 import pandas as pd
 
 from admin.common.models import ValueObject, Reader, Printer
@@ -29,7 +28,6 @@ class DataUpload:
         with open(self.csvfile, newline='', encoding='utf8') as f:
             data_reader = csv.DictReader(f)
             for row in data_reader:
-                ic(row)
                 m = Medpoint()
                 medpt = Medpoint.objects.all().values()[0]
 
