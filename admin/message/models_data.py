@@ -1,11 +1,10 @@
 # link template
 # http://apis.data.go.kr/6410000/GOA/GOA001?ServiceKey=서비스키&type=json&numOfRows=10&pageNo=1
+
 import csv
 import time
-import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-import mysql.connector
 
 
 def scraping():
@@ -25,32 +24,36 @@ def scraping():
     # print(response.text)
     soup = BeautifulSoup(response, "lxml")
     msgs = soup.select("row")
-    msg_list=[]
-    print("adding to soup")
+    msg_list = []
+    # print("================")
     for msg in msgs:
-        temp=[]
+        temp = []
+        msg_id = msg.find("md101_sn").get_text()  # 일련번호를 인덱스값으로?
         msg_date = msg.find("create_date").get_text().split()[0]
         msg_time = msg.find("create_date").get_text().split()[-1]
         # print("date: ",msg_date, "time: ",msg_time)
         # split create_date into date AND time
         location_id = msg.find("location_id").get_text()
         location_name = msg.find("location_name").get_text()
-        # msg_id = msg.find("md101_sn").get_text()  # 일련번호가 필요할까?
-        msg_content = msg.find("msg").get_text()
+        msg_content = msg.find("msg").get_text().replace(",", ".")
+        # 테이블 import할시 fields terminated by ','에 문자내용이 걸려서 짤리지 않게 쉼표로 바꿈.
         # send_platform = rows.find("send_platform").get_text() # irrelevant
         # print(msg_date, msg_time, location_id, location_name, msg_id, msg_content)
-        print("발신 시간: ", msg_date, msg_time, " | 수신지역: ", location_id, location_name, " | 문자내용: ", msg_content)
+        print("일련번호: ", msg_id, " | 발신 시간: ", msg_date, msg_time, " | 수신지역: ", location_id, location_name, " | 문자내용: ",
+              msg_content)
+        temp.append(msg_id)
         temp.append(msg_date)
         temp.append(msg_time)
         temp.append(location_id)
         temp.append(location_name)
         temp.append(msg_content)
         msg_list.append(temp)
-        print('msg_list info added')
+        print("================")
 
-    with open('./data/msg_scraping.csv','w',newline='') as f:
+    with open('./data/msg_scraping.csv', 'w', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
-        # writer.writerow(['index','msg_date','msg_time','location_id','location_name','msg_content'])
+        # writer.writerow(["msg_id","msg_date","msg_time","location_id","location_name","msg_content"])
+        # 윗줄 같이 실행하면 csv를 마리아 테이블에 import한후 "delete from message where msg_id=0;" 를 매번 해야함;
         for i in msg_list:
             writer.writerow(i)
         f.close()

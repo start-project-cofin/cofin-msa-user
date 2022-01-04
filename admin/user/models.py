@@ -35,7 +35,6 @@ class User(models.Model):
     def __str__(self):
         return f'{self.pk}'
 
-# killed User_Vaccine?
 
 # User_Lost table init consist of FKs only => no separate table
 # Unregister table init consist of FKs only => no separate table

@@ -5,8 +5,8 @@ class News(models.Model):
     use_in_migration = True
     news_id = models.AutoField(primary_key=True)
     news_title = models.TextField()
-    news_pub_date = models.DateTimeField()
     news_link = models.TextField()
+    news_pub_date = models.TextField()
 
     # news_tag = models.CharField()
     # news_publisher = models.CharField()

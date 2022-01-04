@@ -9,12 +9,12 @@ class Medpoint(models.Model):
     location_district = models.TextField()
     medpt_name = models.TextField()
     medpt_address = models.TextField()
-    medpt_hr_week = models.TimeField()
-    medpt_hr_sat = models.TimeField()
-    medpt_hr_hol = models.TimeField()
-    medpt_phone = models.IntegerField()
+    medpt_hr_week = models.TextField()
+    medpt_hr_sat = models.TextField()
+    medpt_hr_hol = models.TextField()
+    medpt_phone = models.TextField()
     medpt_bogunso = models.TextField()
-    medpt_bogunso_ph = models.IntegerField()
+    medpt_bogunso_ph = models.TextField()
     medpt_notes = models.TextField()
 
     class Meta:
