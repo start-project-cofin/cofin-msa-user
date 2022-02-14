@@ -16,7 +16,7 @@
 
 ## 기술 스택
 
-Front: react, @mui Back: npm/ yarn/ MariaDB/ Docker
+Front: React/ @mui Back: npm/ yarn/ MariaDB/ Docker
 
 ## 팀원 소개
 노준일, 이시원, 이상호, 윤현성
