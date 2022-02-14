@@ -8,15 +8,11 @@
 ## 개발 기간
 #### 2021. 11. 1 ~ 2022. 01.03 (9주)
 
-+ 1주차 : 아이디어 회의, 프로젝트 기획 확정
-+ 2주차 : 역할 분담, 개발환경 세팅
-+ 3주차 : DB 모델링, 기초 데이터 수집
-+ 4주차 : 역할 분담에 따른 파트 개발
-+ 5주차 : 역할 분담에 따른 파트 개발
-+ 6주차 : 파트간 연결되는 부분. 연결 테스트
-+ 7주차 : 역할 분담에 따른 파트 개발
-+ 8주차 : 배포 및 1차 테스트
-+ 9주차 : 버그 수정
++ 1주차 : created base repository
++ 2주차 : Message scraping
++ 3주차 : created frontend components
++ 7주차 : mariadb setup; Medpoint csv file scraping, News crawling, 
++ 8주차 : sync between frontend user components and backend user app
 
 ## 기술 스택
 <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=SpringBoot&logoColor=white"/> <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=orange"/><br>
